@@ -1,13 +1,13 @@
 site_name: 大数据智能问答系统 - 课程教程
 site_description: NEPU 大数据小学期课程教学内容 - 基于RAG的智能问答系统开发
 site_author: NEPU BigData Teaching Team
-repo_url: https://github.com/kindear/nepu_bigdata_docs
-repo_name: kindear/nepu_bigdata_docs
-edit_uri: blob/main/
 
 theme:
   name: material
   language: zh
+  font:
+    text: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans SC, sans-serif"
+    code: "JetBrains Mono, Fira Code, monospace"
   features:
     - navigation.instant
     - navigation.tracking
@@ -20,24 +20,29 @@ theme:
     - content.code.copy
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: 切换至深色模式
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: 切换至浅色模式
-  icon:
-    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/stylesheets/extra.css
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
