@@ -1,0 +1,11 @@
+# MkDocs 构建输出
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
