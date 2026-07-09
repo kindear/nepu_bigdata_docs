@@ -38,9 +38,9 @@
   --md-nav-bg-color: #FFFFFF;
 
   /* 布局 */
-  --md-grid-max-width: 1440px;
-  --md-sidebar-primary-width: 250px;
-  --md-sidebar-secondary-width: 200px;
+  --md-grid-max-width: 1500px;
+  --md-sidebar-primary-width: 280px;
+  --md-sidebar-secondary-width: 230px;
 
   /* 顶部栏 */
   --md-header-height: 56px;
@@ -100,7 +100,7 @@
 /* 三栏间距紧凑，让正文更宽 */
 .md-main__inner {
   margin-top: 1.5rem;
-  gap: 1.2rem;
+  gap: 0.6rem;
 }
 
 /* 正文卡片 */
@@ -110,7 +110,7 @@
 .md-content__inner {
   background: var(--md-card-bg);
   border-radius: var(--md-card-radius);
-  padding: 2rem 2.8rem;
+  padding: 2rem 2rem;
   box-shadow: var(--md-card-shadow);
   margin-bottom: 2rem;
 }
@@ -224,12 +224,19 @@
 
 /* 导航链接通用：优化行高防止中文换行拥挤 */
 .md-nav--primary .md-nav__link {
-  padding: .35rem .6rem;
+  padding: .35rem .5rem;
   border-radius: 6px;
-  margin: 1px .5rem;
+  margin: 1px .3rem;
   transition: all 0.15s ease;
-  line-height: 1.45;
-  word-break: keep-all;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.md-nav--primary .md-nav__link .md-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 嵌套子级缩进 */
@@ -482,12 +489,20 @@
 /* TOC 条目 */
 .md-sidebar--secondary .md-nav__link {
   font-size: .78rem;
-  padding: .32rem .55rem;
+  padding: .32rem .5rem;
   border-radius: 6px;
-  margin: 2px .3rem;
+  margin: 2px .2rem;
   color: #6B7280 !important;
   transition: all 0.15s ease;
-  line-height: 1.55;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.md-sidebar--secondary .md-nav__link .md-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* TOC 条目悬停 */
